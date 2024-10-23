@@ -15,6 +15,9 @@ app.get("/", (req, res) => {
   res.send("API is Running.");
 });
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
